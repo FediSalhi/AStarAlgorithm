@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fedi/Desktop/Projects/A_Star_CPP/AStarSearch.cpp
+AStarSearch.hpp
+/home/fedi/Desktop/Projects/A_Star_CPP/AStarSearch.hpp
+
+/home/fedi/Desktop/Projects/A_Star_CPP/AStarSearch.hpp
+Node.hpp
+/home/fedi/Desktop/Projects/A_Star_CPP/Node.hpp
+algorithm
+-
+string
+-
+vector
+-
+
+/home/fedi/Desktop/Projects/A_Star_CPP/Node.hpp
+cmath
+-
+vector
+-
+
