@@ -1,11 +1,7 @@
 /************************************************************************************
  * Author               : Fedi Salhi <fadi.salhi@outlook.fr>
  * Creation Date        : 08/10/2022
- * Description          : Header file A* algorithm main class
- *
- * Revision No          : R000
- * Revision Date        :
- * Revision Description :
+ * Description          : Header file for A* algorithm main class
  *************************************************************************************/
 
 #ifndef A_STAR_SEARCH_HPP

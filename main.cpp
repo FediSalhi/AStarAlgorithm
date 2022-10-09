@@ -1,11 +1,7 @@
 /************************************************************************************
  * Author               : Fedi Salhi <fadi.salhi@outlook.fr>
  * Creation Date        : 08/10/2022
- * Description          : constains the main function used to test A* algorithm
- *
- * Revision No          : R000
- * Revision Date        :
- * Revision Description :
+ * Description          : contains the main function used to test A* algorithm
  *************************************************************************************/
 
 #include "AStarSearch.hpp"
@@ -14,7 +10,10 @@
 
 int main() {
 
-  Grid grid("/home/fedi/Desktop/Projects/A_Star_CPP/grid.txt");
+  Grid grid("/home/fedi/Desktop/Projects/A_Star_CPP/grid1.txt");
+  // Grid grid("/home/fedi/Desktop/Projects/A_Star_CPP/grid2.txt");
+  // Grid grid("/home/fedi/Desktop/Projects/A_Star_CPP/grid3.txt");
+
   auto grid_str = grid.ReadGrid();
 
   if (grid.CheckGrid()) {

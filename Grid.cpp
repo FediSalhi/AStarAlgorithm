@@ -1,11 +1,7 @@
 /************************************************************************************
  * Author               : Fedi Salhi <fadi.salhi@outlook.fr>
- * Creation Date        : 08/10/2022
+ * Creation Date        : 09/10/2022
  * Description          : This class reads and process the grid
- *
- * Revision No          : R000
- * Revision Date        :
- * Revision Description :
  *************************************************************************************/
 
 #include "Grid.hpp"

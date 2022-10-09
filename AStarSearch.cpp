@@ -1,11 +1,7 @@
 /************************************************************************************
  * Author               : Fedi Salhi <fadi.salhi@outlook.fr>
  * Creation Date        : 08/10/2022
- * Description          : constains the main A* algorithm
- *
- * Revision No          : R000
- * Revision Date        :
- * Revision Description :
+ * Description          : contains the main A* algorithm
  *************************************************************************************/
 
 #include "AStarSearch.hpp"
@@ -28,19 +24,19 @@ AStarSearch::AStarSearch(std::vector<std::vector<std::string>> &grid,
 
 AStarSearch::~AStarSearch() {
   if (_grid != nullptr) {
-    delete[] _grid;
+    delete _grid;
   };
   if (_startPoint != nullptr) {
-    delete[] _startPoint;
+    delete _startPoint;
   };
   if (_goalPoint != nullptr) {
-    delete[] _goalPoint;
+    delete _goalPoint;
   };
   if (_currentNode != nullptr) {
     delete _currentNode;
   };
   if (_openList != nullptr) {
-    delete[] _openList;
+    delete _openList;
   };
 }
 
@@ -123,7 +119,7 @@ std::vector<std::vector<CellStates>> AStarSearch::Search() {
     ExpandOpenList();
   }
   std::cout << "No Possible Path !" << std::endl;
-  // exit(-1);
+  exit(-1);
 
   return std::vector<std::vector<CellStates>>{};
 }

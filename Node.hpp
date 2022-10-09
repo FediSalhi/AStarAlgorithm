@@ -2,10 +2,6 @@
  * Author               : Fedi Salhi <fadi.salhi@outlook.fr>
  * Creation Date        : 08/10/2022
  * Description          : Node class header file
- *
- * Revision No          : R000
- * Revision Date        :
- * Revision Description :
  *************************************************************************************/
 
 #ifndef NODE_HPP
