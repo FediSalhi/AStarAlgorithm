@@ -1,7 +1,7 @@
 /************************************************************************************
  * Author               : Fedi Salhi <fadi.salhi@outlook.fr>
  * Creation Date        : 08/10/2022
- * Description          : constains the A* algorithm main class
+ * Description          : constains the main A* algorithm
  *
  * Revision No          : R000
  * Revision Date        :
@@ -11,14 +11,17 @@
 #include "AStarSearch.hpp"
 
 AStarSearch::AStarSearch(std::vector<std::vector<std::string>> &grid,
-                         std::vector<int> &start_p, std::vector<int> &end_p) {
+                         std::vector<int> &startPoint,
+                         std::vector<int> &goalPoint) {
 
+  // the goal point is also an open point, so let's format the grid
+  grid[goalPoint[0]][goalPoint[1]] = ".";
   _grid = new std::vector<std::vector<CellStates>>(FormatGridInput(grid));
-  _startPoint = new std::vector<int>(start_p);
-  _goalPoint = new std::vector<int>(end_p);
-  _currentNode = new Node(start_p);
-  _currentNode->UpdateH(_currentNode->ComputeH(*_goalPoint));
-  _currentNode->UpdateF(_currentNode->GetH() + _currentNode->GetG());
+  _startPoint = new std::vector<int>(startPoint);
+  _goalPoint = new std::vector<int>(goalPoint);
+  _currentNode = new Node(startPoint);
+  _currentNode->SetH(_currentNode->ComputeH(*_goalPoint));
+  _currentNode->SetF(_currentNode->GetH() + _currentNode->GetG());
   _openList = new std::vector<Node>{*_currentNode};
   _g = 0;
 }
@@ -51,26 +54,14 @@ void AStarSearch::UpdateGrid(const std::vector<int> &coordinates,
 void AStarSearch::AddItemOpenList(std::vector<int> &coordinates) {
   if (!coordinates.empty()) {
     Node node(coordinates);
-    node.UpdateH(node.ComputeH(*_goalPoint));
-    node.UpdateG(_g);
-    node.UpdateF(node.GetG() + node.GetH());
+    node.SetH(node.ComputeH(*_goalPoint));
+    node.SetG(_g);
+    node.SetF(node.GetG() + node.GetH());
     _openList->push_back(node);
   }
 }
 
-bool AStarSearch::Compare(const Node &node1, const Node &node2) {
-  if (node1 < node1) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-void AStarSearch::PopItemOpenList() {
-
-  //_openList->pop_back();
-  _openList->clear();
-}
+void AStarSearch::ClearOpenList() { _openList->clear(); }
 
 void AStarSearch::SortOpenList() {
   std::sort(_openList->begin(), _openList->end(),
@@ -109,97 +100,97 @@ AStarSearch::CheckCellState(std::vector<int> &coordinates) {
 void AStarSearch::ExpandOpenList() {
   _openList->clear();
   for (auto item : movements) {
-    auto candidate_cell =
+    auto candidateCell =
         std::vector<int>{item[0] + (_currentNode->GetCoordinates()[0]),
                          item[1] + (_currentNode->GetCoordinates()[1])};
     if (CellMovePossibiltyStates::CELL_POSSIBLE_TO_MOVE ==
-        CheckCellState(candidate_cell)) {
-      AddItemOpenList(candidate_cell);
-      UpdateGrid(candidate_cell, CellStates::CELL_STATE_CLOSE);
+        CheckCellState(candidateCell)) {
+      AddItemOpenList(candidateCell);
+      UpdateGrid(candidateCell, CellStates::CELL_STATE_CLOSE);
     }
   }
 }
 
 std::vector<std::vector<CellStates>> AStarSearch::Search() {
-
   while (!_openList->empty()) {
     SortOpenList();
     UpdateCurrentNode(_openList);
     if (GoalIsAttained()) {
       return *_grid;
     }
-    PopItemOpenList();
-    _g++;
+    ClearOpenList();
+    IncrementG();
     ExpandOpenList();
   }
-  std::cout << "No Possibe Path !" << std::endl;
+  std::cout << "No Possible Path !" << std::endl;
+  // exit(-1);
 
   return std::vector<std::vector<CellStates>>{};
 }
 
 std::vector<std::vector<std::string>>
 AStarSearch::FormatGridOutput(std::vector<std::vector<CellStates>> &inputGrid) {
-  std::vector<std::vector<std::string>> formatted_grid{};
+  std::vector<std::vector<std::string>> formattedGrid{};
   for (auto row : inputGrid) {
-    std::vector<std::string> formatted_line{};
+    std::vector<std::string> formattedLine{};
     for (auto item : row) {
       switch (item) {
       case CellStates::CELL_END_POINT: {
-        formatted_line.push_back(goal_str);
+        formattedLine.push_back(_goalStr);
         break;
       }
       case CellStates::CELL_START_POINT: {
-        formatted_line.push_back(start_str);
+        formattedLine.push_back(_startStr);
         break;
       }
       case CellStates::CELL_STATE_CLOSE: {
-        formatted_line.push_back(close_str);
+        formattedLine.push_back(_closeStr);
         break;
       }
       case CellStates::CELL_STATE_OBSTACLE: {
-        formatted_line.push_back(obstacle_str);
+        formattedLine.push_back(_obstacleStr);
         break;
       }
       case CellStates::CELL_STATE_OPEN: {
-        formatted_line.push_back(open_str);
+        formattedLine.push_back(_openStr);
         break;
       }
       case CellStates::CELL_STATE_PATH: {
-        formatted_line.push_back(path_str);
+        formattedLine.push_back(_pathStr);
         break;
       }
       }
     }
-    formatted_grid.push_back(formatted_line);
+    formattedGrid.push_back(formattedLine);
   }
-  return formatted_grid;
+  return formattedGrid;
 }
 
 std::vector<std::vector<CellStates>>
 AStarSearch::FormatGridInput(std::vector<std::vector<std::string>> &inputGrid) {
 
-  std::vector<std::vector<CellStates>> formatted_grid{};
+  std::vector<std::vector<CellStates>> formattedGrid{};
 
   for (auto row : inputGrid) {
-    std::vector<CellStates> formatted_line{};
+    std::vector<CellStates> formattedLine{};
     for (auto item : row) {
-      if (item == goal_str) {
-        formatted_line.push_back(CellStates::CELL_END_POINT);
-      } else if (item == start_str) {
-        formatted_line.push_back(CellStates::CELL_START_POINT);
-      } else if (item == open_str) {
-        formatted_line.push_back(CellStates::CELL_STATE_OPEN);
-      } else if (item == obstacle_str) {
-        formatted_line.push_back(CellStates::CELL_STATE_OBSTACLE);
-      } else if (item == close_str) {
-        formatted_line.push_back(CellStates::CELL_STATE_CLOSE);
-      } else if (item == path_str) {
-        formatted_line.push_back(CellStates::CELL_STATE_PATH);
+      if (item == _goalStr) {
+        formattedLine.push_back(CellStates::CELL_END_POINT);
+      } else if (item == _startStr) {
+        formattedLine.push_back(CellStates::CELL_START_POINT);
+      } else if (item == _openStr) {
+        formattedLine.push_back(CellStates::CELL_STATE_OPEN);
+      } else if (item == _obstacleStr) {
+        formattedLine.push_back(CellStates::CELL_STATE_OBSTACLE);
+      } else if (item == _closeStr) {
+        formattedLine.push_back(CellStates::CELL_STATE_CLOSE);
+      } else if (item == _pathStr) {
+        formattedLine.push_back(CellStates::CELL_STATE_PATH);
       }
     }
-    formatted_grid.push_back(formatted_line);
+    formattedGrid.push_back(formattedLine);
   }
-  return formatted_grid;
+  return formattedGrid;
 }
 
 bool AStarSearch::GoalIsAttained() {
@@ -211,11 +202,16 @@ bool AStarSearch::GoalIsAttained() {
 }
 
 void AStarSearch::ShowGrid() {
-  auto formatted_grid = FormatGridOutput(*_grid);
-  for (auto row : formatted_grid) {
+  auto formattedGrid = FormatGridOutput(*this->_grid);
+  formattedGrid[(*_startPoint)[0]][(*_startPoint)[1]] = "S";
+  formattedGrid[(*_goalPoint)[0]][(*_goalPoint)[1]] = "G";
+
+  for (auto row : formattedGrid) {
     for (auto item : row) {
       std::cout << item;
     }
     std::cout << std::endl;
   }
 }
+
+void AStarSearch::IncrementG() { _g++; };

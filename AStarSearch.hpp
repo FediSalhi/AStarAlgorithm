@@ -47,7 +47,7 @@ public:
 
   void AddItemOpenList(std::vector<int> &coordinates);
 
-  void PopItemOpenList();
+  void ClearOpenList();
 
   void SortOpenList();
 
@@ -75,6 +75,8 @@ public:
 
   bool GoalIsAttained();
 
+  void IncrementG();
+
 private:
   std::vector<std::vector<CellStates>> *_grid;
 
@@ -89,12 +91,12 @@ private:
   const std::vector<std::vector<int>> movements = {
       {0, 1}, {0, -1}, {-1, 0}, {1, 0}};
 
-  std::string open_str = ".";
-  std::string obstacle_str = "|";
-  std::string path_str = "*";
-  std::string close_str = ".";
-  std::string start_str = "S";
-  std::string goal_str = "G";
+  std::string _openStr = ".";
+  std::string _obstacleStr = "|";
+  std::string _pathStr = "*";
+  std::string _closeStr = ".";
+  std::string _startStr = "S";
+  std::string _goalStr = "G";
 
   int _g;
 };

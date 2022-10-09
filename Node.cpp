@@ -12,11 +12,11 @@
 
 Node::Node(std::vector<int> &coordinates) : _coordinates(coordinates){};
 
-void Node::UpdateG(int g) { _g = g; }
+void Node::SetG(int g) { _g = g; }
 
-void Node::UpdateH(int h) { _h = h; }
+void Node::SetH(int h) { _h = h; }
 
-void Node::UpdateF(int f) { _f = f; }
+void Node::SetF(int f) { _f = f; }
 
 int Node::GetF() const { return _f; }
 
@@ -30,11 +30,11 @@ void Node::UpdateCoordinates(std::vector<int> coordiantes) {
   _coordinates = coordiantes;
 };
 
-int Node::ComputeH(std::vector<int> goal_coordinates) {
+int Node::ComputeH(std::vector<int> goalCoordinates) {
   // compute Manhatten distance
-  std::vector<int> current_coordinates = GetCoordinates();
-  return (abs(current_coordinates[0] - goal_coordinates[0]) +
-          abs(current_coordinates[1] - goal_coordinates[1]));
+  std::vector<int> currentCoordinates = GetCoordinates();
+  return (abs(currentCoordinates[0] - goalCoordinates[0]) +
+          abs(currentCoordinates[1] - goalCoordinates[1]));
 }
 
 bool Node::operator<(const Node &other) const {
@@ -55,6 +55,6 @@ bool Node::operator!=(const Node &other) const {
 
 Node Node::operator-(const Node &other) {
   Node node(this->_coordinates);
-  node.UpdateF(this->_f - other.GetF());
+  node.SetF(this->_f - other.GetF());
   return node;
 }

@@ -9,43 +9,26 @@
  *************************************************************************************/
 
 #include "AStarSearch.hpp"
+#include "Grid.hpp"
 #include <iostream>
 
 int main() {
 
-  std::vector<std::vector<CellStates>> grid = {
-      {CellStates::CELL_START_POINT, CellStates::CELL_STATE_OPEN,
-       CellStates::CELL_STATE_OPEN},
-      {CellStates::CELL_STATE_OPEN, CellStates::CELL_STATE_OBSTACLE,
-       CellStates::CELL_STATE_OPEN},
-      {CellStates::CELL_STATE_OPEN, CellStates::CELL_STATE_OBSTACLE,
-       CellStates::CELL_END_POINT},
-  };
+  Grid grid("/home/fedi/Desktop/Projects/A_Star_CPP/grid.txt");
+  auto grid_str = grid.ReadGrid();
 
-  std::vector<std::vector<std::string>> grid_str = {{"S", "|", ".", "."},
-                                                    {".", ".", ".", "."},
-                                                    {".", "|", ".", "."},
-                                                    {".", ".", ".", "."}};
-
-  auto x = std::vector<int>{0, 0};
-  auto y = std::vector<int>{0, 2};
-
-  AStarSearch A(grid_str, x, y);
-
-  A.ShowGrid();
-  std::cout << std::endl;
-  auto solution = A.Search();
-  A.ShowGrid();
-
-  /*   std::vector<std::vector<std::string>> out = A.FormatGridOutput(grid);
-    for (auto item : out) {
-      for (auto s : item) {
-        std::cout << s;
-      }
-      std::cout << std::endl;
-    }
-
-    auto in = A.FormatGridInput(out);
-    int debug = 0; */
+  if (grid.CheckGrid()) {
+    auto startPoint = grid.GetStartPoint();
+    auto goalPoint = grid.GetGoalPoint();
+    AStarSearch A(grid_str, startPoint, goalPoint);
+    std::cout << "=========== Input Grid ===========" << std::endl << std::endl;
+    A.ShowGrid();
+    std::cout << std::endl
+              << std::endl
+              << "=========== Solution ===========" << std::endl
+              << std::endl;
+    A.Search();
+    A.ShowGrid();
+  }
   return 0;
 }

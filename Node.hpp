@@ -17,9 +17,9 @@
 class Node {
 public:
   Node(std::vector<int> &coordinates);
-  void UpdateG(int g);
-  void UpdateH(int h);
-  void UpdateF(int f);
+  void SetG(int g);
+  void SetH(int h);
+  void SetF(int f);
   int GetF() const;
   int GetG() const;
   int GetH() const;
