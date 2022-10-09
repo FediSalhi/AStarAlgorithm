@@ -18,6 +18,12 @@ void Node::UpdateH(int h) { _h = h; }
 
 void Node::UpdateF(int f) { _f = f; }
 
+int Node::GetF() const { return _f; }
+
+int Node::GetG() const { return _g; }
+
+int Node::GetH() const { return _h; }
+
 std::vector<int> Node::GetCoordinates() { return _coordinates; }
 
 void Node::UpdateCoordinates(std::vector<int> coordiantes) {
@@ -37,4 +43,18 @@ bool Node::operator<(const Node &other) const {
   } else {
     return false;
   }
+}
+
+bool Node::operator!=(const Node &other) const {
+  if (this->_coordinates == other._coordinates) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+Node Node::operator-(const Node &other) {
+  Node node(this->_coordinates);
+  node.UpdateF(this->_f - other.GetF());
+  return node;
 }

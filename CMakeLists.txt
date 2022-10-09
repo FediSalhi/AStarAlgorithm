@@ -4,6 +4,8 @@ project(A_STAR_SEARCH_ALGORITHM VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
+set(CMAKE_CXX_STANDARD 11)
+
 add_executable(A_STAR_SEARCH_ALGORITHM main.cpp AStarSearch.cpp AStarSearch.hpp Node.cpp Node.hpp)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

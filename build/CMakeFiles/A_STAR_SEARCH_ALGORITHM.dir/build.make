@@ -60,41 +60,41 @@ include CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/flags.make
 CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.o: CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/flags.make
 CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.o: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fedi/Desktop/Projects/A_Star_CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.o"
-	/usr/lib/ccache/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.o -c /home/fedi/Desktop/Projects/A_Star_CPP/main.cpp
+	/usr/lib/ccache/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.o -c /home/fedi/Desktop/Projects/A_Star_CPP/main.cpp
 
 CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.i"
-	/usr/lib/ccache/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fedi/Desktop/Projects/A_Star_CPP/main.cpp > CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.i
+	/usr/lib/ccache/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fedi/Desktop/Projects/A_Star_CPP/main.cpp > CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.i
 
 CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.s"
-	/usr/lib/ccache/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fedi/Desktop/Projects/A_Star_CPP/main.cpp -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.s
+	/usr/lib/ccache/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fedi/Desktop/Projects/A_Star_CPP/main.cpp -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.s
 
 CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.o: CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/flags.make
 CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.o: ../AStarSearch.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fedi/Desktop/Projects/A_Star_CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.o"
-	/usr/lib/ccache/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.o -c /home/fedi/Desktop/Projects/A_Star_CPP/AStarSearch.cpp
+	/usr/lib/ccache/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.o -c /home/fedi/Desktop/Projects/A_Star_CPP/AStarSearch.cpp
 
 CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.i"
-	/usr/lib/ccache/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fedi/Desktop/Projects/A_Star_CPP/AStarSearch.cpp > CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.i
+	/usr/lib/ccache/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fedi/Desktop/Projects/A_Star_CPP/AStarSearch.cpp > CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.i
 
 CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.s"
-	/usr/lib/ccache/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fedi/Desktop/Projects/A_Star_CPP/AStarSearch.cpp -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.s
+	/usr/lib/ccache/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fedi/Desktop/Projects/A_Star_CPP/AStarSearch.cpp -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.s
 
 CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.o: CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/flags.make
 CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.o: ../Node.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fedi/Desktop/Projects/A_Star_CPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.o"
-	/usr/lib/ccache/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.o -c /home/fedi/Desktop/Projects/A_Star_CPP/Node.cpp
+	/usr/lib/ccache/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.o -c /home/fedi/Desktop/Projects/A_Star_CPP/Node.cpp
 
 CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.i"
-	/usr/lib/ccache/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fedi/Desktop/Projects/A_Star_CPP/Node.cpp > CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.i
+	/usr/lib/ccache/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fedi/Desktop/Projects/A_Star_CPP/Node.cpp > CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.i
 
 CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.s"
-	/usr/lib/ccache/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fedi/Desktop/Projects/A_Star_CPP/Node.cpp -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.s
+	/usr/lib/ccache/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fedi/Desktop/Projects/A_Star_CPP/Node.cpp -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.s
 
 # Object files for target A_STAR_SEARCH_ALGORITHM
 A_STAR_SEARCH_ALGORITHM_OBJECTS = \

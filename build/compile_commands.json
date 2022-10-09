@@ -1,17 +1,17 @@
 [
 {
   "directory": "/home/fedi/Desktop/Projects/A_Star_CPP/build",
-  "command": "/usr/lib/ccache/g++    -g   -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.o -c /home/fedi/Desktop/Projects/A_Star_CPP/main.cpp",
+  "command": "/usr/lib/ccache/g++-7    -g   -std=gnu++11 -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.o -c /home/fedi/Desktop/Projects/A_Star_CPP/main.cpp",
   "file": "/home/fedi/Desktop/Projects/A_Star_CPP/main.cpp"
 },
 {
   "directory": "/home/fedi/Desktop/Projects/A_Star_CPP/build",
-  "command": "/usr/lib/ccache/g++    -g   -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.o -c /home/fedi/Desktop/Projects/A_Star_CPP/AStarSearch.cpp",
+  "command": "/usr/lib/ccache/g++-7    -g   -std=gnu++11 -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.o -c /home/fedi/Desktop/Projects/A_Star_CPP/AStarSearch.cpp",
   "file": "/home/fedi/Desktop/Projects/A_Star_CPP/AStarSearch.cpp"
 },
 {
   "directory": "/home/fedi/Desktop/Projects/A_Star_CPP/build",
-  "command": "/usr/lib/ccache/g++    -g   -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.o -c /home/fedi/Desktop/Projects/A_Star_CPP/Node.cpp",
+  "command": "/usr/lib/ccache/g++-7    -g   -std=gnu++11 -o CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.o -c /home/fedi/Desktop/Projects/A_Star_CPP/Node.cpp",
   "file": "/home/fedi/Desktop/Projects/A_Star_CPP/Node.cpp"
 }
 ]

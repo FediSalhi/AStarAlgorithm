@@ -13,6 +13,7 @@
 
 #include "Node.hpp"
 #include <algorithm>
+#include <iostream>
 #include <string>
 #include <vector>
 
@@ -37,12 +38,12 @@ enum class CellMovePossibiltyStates {
 
 class AStarSearch {
 public:
-  AStarSearch(std::vector<std::vector<CellStates>> &grid,
+  AStarSearch(std::vector<std::vector<std::string>> &grid,
               std::vector<int> &start_p, std::vector<int> &end_p);
 
   ~AStarSearch();
 
-  void UpdateGrid(std::vector<int> &coordinates, CellStates newState);
+  void UpdateGrid(const std::vector<int> &coordinates, CellStates newState);
 
   void AddItemOpenList(std::vector<int> &coordinates);
 
@@ -68,7 +69,11 @@ public:
   FormatGridOutput(std::vector<std::vector<CellStates>> &inputGrid);
 
   std::vector<std::vector<CellStates>>
-  FormatGridOutput(std::vector<std::vector<std::string>> &outputGrid);
+  FormatGridInput(std::vector<std::vector<std::string>> &outputGrid);
+
+  void ShowGrid();
+
+  bool GoalIsAttained();
 
 private:
   std::vector<std::vector<CellStates>> *_grid;
@@ -83,6 +88,15 @@ private:
 
   const std::vector<std::vector<int>> movements = {
       {0, 1}, {0, -1}, {-1, 0}, {1, 0}};
+
+  std::string open_str = ".";
+  std::string obstacle_str = "|";
+  std::string path_str = "*";
+  std::string close_str = ".";
+  std::string start_str = "S";
+  std::string goal_str = "G";
+
+  int _g;
 };
 
 #endif

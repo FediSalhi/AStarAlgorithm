@@ -8,5 +8,7 @@ CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/AStarSearch.cpp.o: ../Node.hpp
 CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.o: ../Node.cpp
 CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/Node.cpp.o: ../Node.hpp
 
+CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.o: ../AStarSearch.hpp
+CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.o: ../Node.hpp
 CMakeFiles/A_STAR_SEARCH_ALGORITHM.dir/main.cpp.o: ../main.cpp
 

@@ -20,10 +20,15 @@ public:
   void UpdateG(int g);
   void UpdateH(int h);
   void UpdateF(int f);
+  int GetF() const;
+  int GetG() const;
+  int GetH() const;
   std::vector<int> GetCoordinates();
   void UpdateCoordinates(std::vector<int> coordiantes);
   int ComputeH(std::vector<int> goal_coordinates);
   bool operator<(const Node &other) const;
+  bool operator!=(const Node &other) const;
+  Node operator-(const Node &other);
 
 private:
   std::vector<int> _coordinates;
