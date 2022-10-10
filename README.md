@@ -3,12 +3,12 @@ A* is an efficient search algorithm  used in many fields. Learn more about this 
 This project is a C++ implementation of the algorithm. Given a 2D grid, start point, and a goal point, the algorithm generates a path connecting the two points and avoiding the obstacles. The grid should contains at exactly one start point and one goal point. `grid1.txt`, `grid2.txt`, and `grid3.txt` files contain examples of 2D grids that can be used for the algorithm. The start point, goal point, and the obstacles are represented on the grid using 'S', 'G', and '|', respectively. In the generates solution, the path will represented by '*' character.
 
 There are 3 classes in the project:
-- `Grid`: Reads the grid from a text file and check if it is a valid grid (e.g. a grid that does not contain a goal point is not a valid grid).
+- `Grid`: Reads the grid from a text file and checks if it is a valid grid (e.g. a grid that does not contain a goal point is not a valid grid).
 - `Node`: A node is point from the grid (i.e has x and y coordinates) that has a g, h, and f values. Refer to https://en.wikipedia.org/wiki/A*_search_algorithm to understand what these values are used for.
 - `AStarSearch` This class contains the main search algorithm and some helper methods.
 
 ## Build and Run
-The algorithm only use the STL library. Make sure that you have cmake and g++ installed in your machine before building the project. You can check them with using:
+The algorithm only use the STL library. Make sure that you have cmake and g++ installed in your machine before building the project. You can check them using:
 ```
 cmake --version
 g++ --version
@@ -20,7 +20,7 @@ cd  build
 cmake ..
 make
 ```
-If the project is successfully built, `A_STAR_SEARCH_ALGORITHM` executable file will be created in the `build` folder. Run the program using using this command:
+If the project is successfully built, `A_STAR_SEARCH_ALGORITHM` executable file will be created in the `build` folder. Run the program using this command:
 ```
 ./A_STAR_SEARCH_ALGORITHM
 ```
@@ -75,7 +75,9 @@ S*****|.........................|..................
 
 ```
 
+Please contact me if you have any suggestion about the algorithm implementation.
+
 ## Authors
 
 * **Fedi Salhi** [FediSalhi](https://github.com/FediSalhi)
-Please contact me if you have any suggestion about the algorithm.
+
