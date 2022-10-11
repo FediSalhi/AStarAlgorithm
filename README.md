@@ -82,6 +82,11 @@ S*****|.........................|..................
 
 Please contact me if you have any suggestion about the algorithm implementation.
 
+## TODO
+- Use smart pointers
+- Use std::optional (for grid read function)
+- Use move semantics 
+
 ## Authors
 
 * **Fedi Salhi** [FediSalhi](https://github.com/FediSalhi)
