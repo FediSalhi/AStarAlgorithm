@@ -85,7 +85,13 @@ Please contact me if you have any suggestion about the algorithm implementation.
 ## TODO
 - Use smart pointers
 - Use std::optional (for grid read function)
-- Use move semantics 
+- Use move semantics for temp objects
+- use pragma once
+- define the enum inside classes (enum X or enum class X?)
+- use const for methods and methods arguments
+- use noexcept specifier for get functions (functions that don't throw exceptions)
+- emplace_back() works faster than push_back()
+- verify the expand method
 
 ## Authors
 
